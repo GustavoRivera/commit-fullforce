@@ -3,34 +3,21 @@ import { Octokit } from 'octokit';
 
 //Added authentication token from Github
 const octokit = new Octokit({
-  auth: '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'
+  auth: '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'
 })
 
 @Injectable()
 export class AppService {
   async getCommits():Promise<String>{
 
-    //Accesing Github API repo "commit-fullforce" getting branches
-    const response = await octokit.request('GET /repos/{owner}/{repo}/branches', {
+    //Accesing Github API repo "commit-fullforce" getting commits
+    const response = await octokit.request('GET /repos/{owner}/{repo}/commits', {
       owner: 'GustavoRivera',
       repo: 'commit-fullforce',
     }).then(res => {
       return res.data})
 
-
-    // //Accesing Github API repo "commit-fullforce" getting branches
-     let branchesCommits = []
-     for(let i = 0; i < response.length; i ++){
-      console.log(response[i].name)
-        await octokit.request('GET /repos/{owner}/{repo}/branches/{branch}', {
-           owner: 'GustavoRivera',
-           repo: 'commit-fullforce',
-           branch: `${response[i].name}`
-         }).then(res => { branchesCommits.push(res.data)})
-     }
-    //  console.log(branchesCommits);
-
-    const stringnew = new Promise<String>((resolve, reject) => {resolve(JSON.stringify(branchesCommits))})
+    const stringnew = new Promise<String>((resolve, reject) => {resolve(JSON.stringify(response))})
     return stringnew;
   }
 }
