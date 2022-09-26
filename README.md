@@ -13,7 +13,7 @@ After that open a terminal in the repository source folder and run the following
 ```bash
 $ npm run install-full-ap
 ```
-
+This proccess takes a while ("around 5 minutes in a slow pc") depending on the HDD or SSD that the pc have.
 ## Running the app
 
 ```bash
