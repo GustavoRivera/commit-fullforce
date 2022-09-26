@@ -3,7 +3,7 @@ import { Octokit } from 'octokit';
 
 //Added authentication token from Github
 const octokit = new Octokit({
-  auth: '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'
+  auth: process.env.AUTH_ACCESS_TOKEN
 })
 
 @Injectable()
