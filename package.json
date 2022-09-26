@@ -1,0 +1,28 @@
+{
+  "name": "commit-fullforce",
+  "version": "1.0.0",
+  "description": "test: token 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",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend":"cd backend && npm start",
+    "frontend":"cd frontend && npm start",
+    "install-backend":"cd backend && npm install",
+    "install-frontend":"cd frontend && npm install",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "install-full-ap": "concurrently \"npm run install-backend\" \"npm run install-frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoRivera/commit-fullforce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoRivera/commit-fullforce/issues"
+  },
+  "homepage": "https://github.com/GustavoRivera/commit-fullforce#readme",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
